@@ -29,7 +29,9 @@ class SettingScreen extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              Get.to(() => const EditProfile());
+              Get.to(() => EditProfile(
+                    userName: controller.snapshotData['vendor_name'],
+                  ));
             },
             icon: const Icon(Icons.edit),
           ),
@@ -56,10 +58,21 @@ class SettingScreen extends StatelessWidget {
             return Column(
               children: [
                 ListTile(
-                  leading: Image.asset(
-                    'assets/images/emartlogo.png',
-                    fit: BoxFit.cover,
-                  ).box.roundedFull.clip(Clip.antiAlias).make(),
+                  leading: controller.snapshotData['imageUrl'] == ''
+                      ? Image.asset(
+                          'assets/images/mobile.jpg',
+                          width: 60,
+                          fit: BoxFit.cover,
+                        ).box.roundedFull.clip(Clip.antiAlias).make()
+                      : Image.network(
+                          controller.snapshotData['imageUrl'],
+                          width: 60,
+                          fit: BoxFit.cover,
+                        ).box.roundedFull.clip(Clip.antiAlias).make(),
+                  // leading: Image.asset(
+                  //   'assets/images/emartlogo.png',
+                  //   fit: BoxFit.cover,
+                  // ).box.roundedFull.clip(Clip.antiAlias).make(),
                   title: boldText(
                       text: "${controller.snapshotData['vendor_name']}"),
                   subtitle:
