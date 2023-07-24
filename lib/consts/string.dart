@@ -1,4 +1,4 @@
-const appName = 'eMart Seller App',
+const appName = 'Shop Now',
     login = 'Login',
     logout = 'Logout',
     welcome = 'Hi, Welcome to',

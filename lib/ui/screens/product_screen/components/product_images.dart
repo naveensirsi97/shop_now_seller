@@ -4,11 +4,15 @@ import 'package:flutter/material.dart';
 
 Widget productImages({required label, onPress}) {
   return Container(
-      padding: const EdgeInsets.all(8),
-      height: 100,
-      width: 100,
-      decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(16)),
-      child:
-          Center(child: boldText(text: label, color: purpleColor, size: 16.0)));
+    padding: const EdgeInsets.all(8),
+    height: 100,
+    width: 100,
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(16),
+    ),
+    child: Center(
+      child: boldText(text: label, color: purpleColor, size: 16.0),
+    ),
+  );
 }
